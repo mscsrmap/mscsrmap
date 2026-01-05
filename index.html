@@ -4,11 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Microsoft Student Community at SRM University AP - A vibrant student-led tech community focused on Azure, AI, and cloud computing." />
   <title>Microsoft Student Community - SRM University AP</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+
+  <!-- DNS Prefetch for additional resources -->
+  <link rel="dns-prefetch" href="https://api.web3forms.com" />
+
+  <!-- Stylesheets with optimized loading -->
+  <link rel="stylesheet" href="styles.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -25,8 +38,8 @@
     </div>
   </div>
 
-  <!-- Background Video -->
-  <video class="background-video" muted loop playsinline id="bgVideo">
+  <!-- Background Video - optimized with preload metadata -->
+  <video class="background-video" muted loop playsinline id="bgVideo" preload="metadata">
     <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
   </video>
   <div class="background-overlay"></div>
@@ -123,7 +136,7 @@
         </div>
         <div class="about-image">
           <div class="image-placeholder">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" />
+            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -138,7 +151,8 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/Jayanth_RK.jpg" alt="Jayanth Ramakrishnan" class="founder-img" />
+              <img src="images/Jayanth_RK.jpg" alt="Jayanth Ramakrishnan" class="founder-img" loading="lazy"
+                decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -155,7 +169,7 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/CV_Tomy.jpg" alt="CV Tomy" class="founder-img" />
+              <img src="images/CV_Tomy.jpg" alt="CV Tomy" class="founder-img" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -172,7 +186,8 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/Dr_Murali_Krishna.jpg" alt="Dr Murali Krishna Enduri" class="founder-img" />
+              <img src="images/Dr_Murali_Krishna.jpg" alt="Dr Murali Krishna Enduri" class="founder-img" loading="lazy"
+                decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -244,7 +259,8 @@
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img" />
+            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img"
+              loading="lazy" decoding="async" />
           </div>
           <div class="footer-connect">
             <p>Connect with us</p>
@@ -265,11 +281,7 @@
     </div>
   </footer>
 
-  <!-- Supabase for Admin Dashboard Sync -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="msc-admin-sync.js"></script>
-
-  <script src="script.js"></script>
+  <script src="script.min.js" defer></script>
 
   <script type="module">
     // Import the functions you need from the SDKs you need

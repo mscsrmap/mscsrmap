@@ -4,14 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Events hosted by Microsoft Student Community at SRM University AP - Workshops, hackathons, and tech talks." />
   <title>Events - Microsoft Student Community</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Supabase for dynamic events loading -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="events-loader.js"></script>
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Stylesheets with optimized loading -->
+  <link rel="stylesheet" href="styles.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="events-page">
@@ -28,8 +34,8 @@
     </div>
   </div>
 
-  <!-- Background Video -->
-  <video class="background-video" muted loop playsinline id="bgVideo">
+  <!-- Background Video - optimized with preload metadata -->
+  <video class="background-video" muted loop playsinline id="bgVideo" preload="metadata">
     <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
   </video>
   <div class="background-overlay"></div>
@@ -65,7 +71,6 @@
       <!-- Past Events -->
       <div class="events-section">
         <h3 class="events-subtitle">Past Events</h3>
-        <!-- Events loaded dynamically from admin dashboard -->
         <div class="events-grid">
           <div class="event-card past-event quantum-event">
             <div class="event-date">
@@ -195,7 +200,8 @@
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img" />
+            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img"
+              loading="lazy" decoding="async" />
           </div>
           <div class="footer-connect">
             <p>Connect with us</p>
@@ -216,7 +222,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.min.js" defer></script>
 </body>
 
 </html>

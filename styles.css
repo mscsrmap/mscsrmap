@@ -935,7 +935,7 @@ section:nth-child(6) {
 .hackathon-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(5, 5, 10, 0.96) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658955/HachMSC_igttdh.jpg");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658955/HachMSC_igttdh.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -951,7 +951,7 @@ section:nth-child(6) {
 .quantum-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(5, 5, 10, 0.96) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658945/QuantumComp_yes6wo.jpg");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658945/QuantumComp_yes6wo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -967,7 +967,7 @@ section:nth-child(6) {
 .techfest-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(5, 5, 10, 0.96) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658960/TechFest_qshvkr.gif");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658960/TechFest_qshvkr.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -982,7 +982,7 @@ section:nth-child(6) {
 .zerojam-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(5, 5, 10, 0.9) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658980/ZeroZam_qpyr1u.jpg");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658980/ZeroZam_qpyr1u.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -997,7 +997,7 @@ section:nth-child(6) {
 .techhunt-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(5, 5, 10, 0.9) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658920/TechHunt_ocdicd.jpg");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658920/TechHunt_ocdicd.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1012,7 +1012,7 @@ section:nth-child(6) {
 .hackxmsc-event {
   background-image:
     linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(5, 5, 10, 0.9) 100%),
-    url("../res.cloudinary.com/ds0ipwzxr/image/upload/v1761658924/HackXMSC_vc0uae.gif");
+    url("https://res.cloudinary.com/ds0ipwzxr/image/upload/v1761658924/HackXMSC_vc0uae.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
