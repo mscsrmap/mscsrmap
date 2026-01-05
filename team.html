@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - Microsoft Student Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Supabase for dynamic team loading -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="team-loader.js"></script>
+</head>
+
+<body class="team-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <img src="images/MSC%20Logo.png" alt="MSC Logo" class="loading-logo">
+            <div class="loading-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <p class="loading-fact" id="loadingFact"></p>
+        </div>
+    </div>
+
+    <!-- Background Video -->
+    <video class="background-video" muted loop playsinline id="bgVideo">
+        <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
+    </video>
+    <div class="background-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="team.html" class="nav-link active">Team</a></li>
+                <li><a href="https://singularitymainwebsite.netlify.app/" target="_blank" rel="noopener noreferrer"
+                        class="singularity-btn" title="The Singularity Lab - Advanced Research Lab">Singularity</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chief Board Members Section -->
+    <section id="chief-board" class="board">
+        <div class="container">
+            <h2 class="section-title">Chief Board Members</h2>
+            <!-- Chief board members loaded dynamically from admin dashboard -->
+            <div class="chief-board-grid">
+                <!-- Chief board members will load here automatically from Supabase -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Board Members Section -->
+    <section id="board" class="board">
+        <div class="container">
+            <h2 class="section-title">Board Members</h2>
+            <!-- Board members loaded dynamically from admin dashboard -->
+            <div class="board-grid">
+                <!-- Board members will load here automatically from Supabase -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Our Team Members</h2>
+            <!-- Team members loaded dynamically from admin dashboard -->
+            <div class="team-grid">
+                <!-- Team members will load here automatically from Supabase -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-connect">
+                        <p>Connect with us</p>
+                        <div class="footer-social">
+                            <a href="https://linkedin.com/company/microsoft-student-community-srm-university/"
+                                target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:msc.community@srmap.edu.in" target="_blank"><i
+                                    class="fa fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/msc.srmap/?igsh=YmEwdnlteHUwNjVs#/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://discord.com/invite/wZ55nBhWtJ/" target="_blank"><i
+                                    class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="footer-right">
+                    <p></p>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

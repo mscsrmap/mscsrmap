@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events - Microsoft Student Community</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Supabase for dynamic events loading -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="events-loader.js"></script>
+</head>
+
+<body class="events-page">
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <img src="images/MSC%20Logo.png" alt="MSC Logo" class="loading-logo">
+      <div class="loading-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <p class="loading-fact" id="loadingFact"></p>
+    </div>
+  </div>
+
+  <!-- Background Video -->
+  <video class="background-video" muted loop playsinline id="bgVideo">
+    <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
+  </video>
+  <div class="background-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="nav-logo-img" />
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="events.html" class="nav-link active">Events</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="https://singularitymainwebsite.netlify.app/" target="_blank" rel="noopener noreferrer"
+            class="singularity-btn" title="The Singularity Lab - Advanced Research Lab">Singularity</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Events Section -->
+  <section id="events" class="events">
+    <div class="container">
+      <h2 class="section-title">Events</h2>
+
+      <!-- Past Events -->
+      <div class="events-section">
+        <h3 class="events-subtitle">Past Events</h3>
+        <!-- Events loaded dynamically from admin dashboard -->
+        <div class="events-grid">
+          <div class="event-card past-event quantum-event">
+            <div class="event-date">
+              <span class="month">OCT</span>
+              <span class="day">31</span>
+            </div>
+            <div class="event-content">
+              <h4>Quantum Computing Workshop</h4>
+              <p>
+                Step into the future of technology with our Hands-on Workshop
+                on Introduction to Quantum Computing, organized by the
+                Microsoft Student Community, SRM University AP and Computer
+                Science Engineering Department.
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Mini Auditorium
+                  SR-Block, SRM University AP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card past-event hackathon-event">
+            <div class="event-date">
+              <span class="month">NOV</span>
+              <span class="day">1-2</span>
+            </div>
+            <div class="event-content">
+              <h4>&lt;hack&gt;2.0&lt;/msc&gt;</h4>
+              <p>
+                Solutions for Smart India — Innovate and build impactful
+                technology to improve the everyday life of Indians and
+                contribute to the nation's progress.
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i> SRM University
+                  AP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card past-event techfest-event">
+            <div class="event-date">
+              <span class="month">OCT - NOV</span>
+              <span class="day">31 - 3</span>
+            </div>
+            <div class="event-content">
+              <h4>MSC Tech Fest</h4>
+              <p>
+                Solutions for Smart India — Innovate and build impactful
+                technology to improve the everyday life of Indians and
+                contribute to the nation's progress.
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i> SRM University
+                  AP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card past-event hackxmsc-event">
+            <div class="event-date">
+              <span class="month">JAN</span>
+              <span class="day">24-25</span>
+            </div>
+            <div class="event-content">
+              <h4>&lt;hack&gt;X&ltmsc&gt;</h4>
+              <p>
+                Hackathon is on Campus Problems. Students have to do some
+                automation projects that could be helpful for SRM University
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i>ALC, Homi J Baba
+                  Block, SRM University AP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card past-event techhunt-event">
+            <div class="event-date">
+              <span class="month">FEB</span>
+              <span class="day">7</span>
+            </div>
+            <div class="event-content">
+              <h4>MSC TECH HUNT</h4>
+              <p>
+                Learn version control with Git and collaboration using GitHub.
+                Essential skills for every developer.
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i>S-209 SR Block, SRM
+                  University AP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card past-event zerojam-event">
+            <div class="event-date">
+              <span class="month">APR</span>
+              <span class="day">4-5</span>
+            </div>
+            <div class="event-content">
+              <h4>Zero Jam</h4>
+              <p>
+                48-hour coding marathon where teams built innovative solutions
+                for real-world problems using Microsoft technologies.
+              </p>
+              <div class="event-details">
+                <span class="event-time"><i class="fas fa-clock"></i> Completed</span>
+                <span class="event-location"><i class="fas fa-map-marker-alt"></i> C-202 CV Raman block,
+                  SRM University AP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img" />
+          </div>
+          <div class="footer-connect">
+            <p>Connect with us</p>
+            <div class="footer-social">
+              <a href="https://linkedin.com/company/microsoft-student-community-srm-university/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="mailto:msc.community@srmap.edu.in" target="_blank"><i class="fa fa-envelope"></i></a>
+              <a href="https://www.instagram.com/msc.srmap/?igsh=YmEwdnlteHUwNjVs#/" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://discord.com/invite/wZ55nBhWtJ/" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="footer-right">
+                    <p></p>
+                </div> -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
