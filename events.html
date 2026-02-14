@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,8 +14,9 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
   <!-- Stylesheets with optimized loading -->
-  <link rel="stylesheet" href="styles.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -24,36 +25,29 @@
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
     <div class="loading-content">
-      <img src="images/MSC%20Logo.png" alt="MSC Logo" class="loading-logo">
-      <div class="loading-dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loadingBar"></div>
       </div>
-      <p class="loading-fact" id="loadingFact"></p>
     </div>
   </div>
 
   <!-- Background Video - optimized with preload metadata -->
   <video class="background-video" muted loop playsinline id="bgVideo" preload="metadata">
-    <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
+    <source
+      src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/Microsoft_Student_Community_Title_Card.mp4"
+      type="video/mp4">
   </video>
   <div class="background-overlay"></div>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="nav-logo">
-        <a href="index.html">
-          <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="nav-logo-img" />
-        </a>
-      </div>
+
       <ul class="nav-menu">
         <li><a href="index.html#home" class="nav-link">Home</a></li>
         <li><a href="events.html" class="nav-link active">Events</a></li>
         <li><a href="team.html" class="nav-link">Team</a></li>
-        <li><a href="https://singularitymainwebsite.netlify.app/" target="_blank" rel="noopener noreferrer"
-            class="singularity-btn" title="The Singularity Lab - Advanced Research Lab">Singularity</a></li>
+
       </ul>
       <div class="hamburger">
         <span></span>
@@ -200,8 +194,8 @@
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img"
-              loading="lazy" decoding="async" />
+            <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/MSC%20Logo.png"
+              alt="Microsoft Student Community Logo" class="footer-logo-img" loading="lazy" decoding="async" />
           </div>
           <div class="footer-connect">
             <p>Connect with us</p>
@@ -222,7 +216,7 @@
     </div>
   </footer>
 
-  <script src="script.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
-// Mobile Navigation Toggle
+﻿// Mobile Navigation Toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
-  
+
   // Toggle body scroll lock
   if (navMenu.classList.contains('active')) {
     document.body.style.overflow = 'hidden';
@@ -38,7 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     e.preventDefault();
     const targetId = this.getAttribute("href");
     const target = document.querySelector(targetId);
-    
+
     // Close mobile menu if open
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.querySelector('.hamburger');
@@ -47,16 +47,16 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       hamburger.classList.remove('active');
       document.body.style.overflow = '';
     }
-    
+
     if (target) {
       const navbarHeight = 100; // Adjust based on navbar height
       const targetPosition = target.offsetTop - navbarHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth"
       });
-      
+
       // Update active nav link
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
@@ -66,87 +66,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Hero Title Shrinking Effect on Scroll
-const heroTitle = document.querySelector('.hero-title');
-const heroSubtitle = document.querySelector('.hero-subtitle');
-
-window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
-  
-  // Shrink hero title when scrolled more than 100px
-  if (heroTitle && heroSubtitle) {
-    if (scrolled > 100) {
-      heroTitle.classList.add('scrolled');
-      heroSubtitle.classList.add('scrolled');
-    } else {
-      heroTitle.classList.remove('scrolled');
-      heroSubtitle.classList.remove('scrolled');
-    }
-  }
-});
-
-// Add scroll effect - Dynamic overlay tint + Navbar + Scroll Spy
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  const overlay = document.querySelector(".background-overlay");
-  const scrollIndicator = document.querySelector(".scroll-indicator");
-  const scrollPercent = Math.min(window.scrollY / window.innerHeight, 1);
-  
-  // Dynamic overlay tint - darker on hero for better text readability
-  const overlayOpacity = 0.7 + (scrollPercent * 0.15); // 0.7 to 0.85
-  overlay.style.background = `rgba(0, 0, 0, ${overlayOpacity})`;
-  
-  // Navbar background effect - clean and elegant
-  if (window.scrollY > 100) {
-    navbar.style.background = "rgba(15, 15, 20, 0.75)";
-    navbar.style.backdropFilter = "blur(25px) saturate(150%)";
-    navbar.style.boxShadow = "0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)";
-  } else {
-    navbar.style.background = "rgba(10, 10, 15, 0.6)";
-    navbar.style.backdropFilter = "blur(20px) saturate(140%)";
-    navbar.style.boxShadow = "0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)";
-  }
-  
-  // Scroll spy - highlight active section
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const checkpointDots = document.querySelectorAll('.checkpoint-dot');
-  
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.scrollY >= (sectionTop - 150)) {
-      current = section.getAttribute('id');
-    }
-  });
-  
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) {
-      link.classList.add('active');
-    }
-  });
-  
-  // Update checkpoint dots
-  checkpointDots.forEach(dot => {
-    dot.classList.remove('active');
-    if (dot.getAttribute('data-section') === current) {
-      dot.classList.add('active');
-    }
-  });
-  
-  // Hide scroll indicator when in contact section
-  if (scrollIndicator) {
-    if (current === 'contact') {
-      scrollIndicator.style.opacity = '0';
-      scrollIndicator.style.pointerEvents = 'none';
-    } else {
-      scrollIndicator.style.opacity = '1';
-      scrollIndicator.style.pointerEvents = 'auto';
-    }
-  }
-});
 
 // Event Modal Functionality
 const eventModal = document.getElementById('eventModal');
@@ -196,10 +115,10 @@ const eventData = {
 function openEventModal(eventId) {
   const data = eventData[eventId];
   if (!data) return;
-  
+
   modalTitle.textContent = data.title;
   modalDate.textContent = data.date;
-  
+
   // Build modal body
   let bodyHTML = '';
   data.sections.forEach(section => {
@@ -211,7 +130,7 @@ function openEventModal(eventId) {
     `;
   });
   modalBody.innerHTML = bodyHTML;
-  
+
   // Show modal with animation
   eventModal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -251,34 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Animate elements on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", () => {
-  const animateElements = document.querySelectorAll(
-    ".event-card, .founder-card, .stat-item, .contact-item"
-  );
-
-  animateElements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
-});
 
 // Event registration functionality
 document.querySelectorAll(".register-btn").forEach((btn) => {
@@ -392,30 +283,64 @@ if (contactForm) {
     } catch (error) {
       console.error("Form submission failed:", error);
       showStatus(
-        "Sorry, there was an error sending your message. Please try again or contact us directly.",
+        "Failed to send message. Please try again later.",
         "error"
       );
     } finally {
-      // Reset button state
       submitBtn.disabled = false;
       submitBtn.textContent = "Send Message";
     }
   });
-}
 
-// Function to show status messages
-function showStatus(message, type) {
-  formStatus.textContent = message;
-  formStatus.className = `form-status ${type}`;
-
-  // Auto-hide success messages after 5 seconds
-  if (type === "success") {
+  function showStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
     setTimeout(() => {
       formStatus.textContent = "";
       formStatus.className = "form-status";
     }, 5000);
   }
 }
+
+// Scroll Spy for Checkpoint Dots
+document.addEventListener('DOMContentLoaded', () => {
+  const dots = document.querySelectorAll('.checkpoint-dot');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observerOptions = {
+    threshold: 0.3, // Trigger when 30% of section is visible
+    rootMargin: "-20% 0px -20% 0px" // Adjust detection zone
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+
+        // Remove active from all
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Add active to current
+        const activeDot = document.querySelector(`.checkpoint-dot[data-section="${id}"]`);
+        if (activeDot) {
+          activeDot.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Also update on click to be instant
+  dots.forEach(dot => {
+    dot.addEventListener('click', function () {
+      dots.forEach(d => d.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
 
 // Parallax effect to hero background
 window.addEventListener("scroll", () => {
@@ -428,32 +353,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Typing effect to hero title
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.innerHTML = "";
-
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-
-  type();
-}
-
-// Typing effect when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  const heroTitle = document.querySelector(".hero-title");
-  if (heroTitle) {
-    const originalText = heroTitle.textContent;
-    setTimeout(() => {
-      typeWriter(heroTitle, originalText, 150);
-    }, 1000);
-  }
-});
+// Typing effect removed â€” preserves hero title span structure for gradient styling
 
 // Hover effects to cards
 document.querySelectorAll(".event-card, .founder-card").forEach((card) => {
@@ -470,15 +370,15 @@ document.querySelectorAll(".event-card, .founder-card").forEach((card) => {
 document.addEventListener('DOMContentLoaded', () => {
   // Handle page transition links
   const transitionLinks = document.querySelectorAll('.page-transition');
-  
+
   transitionLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
-      
+
       // Fade out animation
       document.body.style.animation = 'fadeOut 0.4s ease-in-out';
-      
+
       setTimeout(() => {
         window.location.href = href;
       }, 400);
@@ -505,13 +405,13 @@ document.head.appendChild(style);
 // Delayed Background Video Playback
 window.addEventListener("load", () => {
   const bgVideo = document.getElementById('bgVideo');
-  
+
   // Delay video start by 1 second to prevent glitching
   if (bgVideo) {
     // Set video properties
     bgVideo.muted = true;
     bgVideo.playsInline = true;
-    
+
     setTimeout(() => {
       bgVideo.play().catch(err => {
         console.log('Video autoplay prevented:', err);
@@ -524,45 +424,35 @@ window.addEventListener("load", () => {
   }
 });
 
-// Tech Facts for Loading Screen
-const techFacts = [
-  "The first computer virus was created in 1983 and was called 'Elk Cloner'",
-  "Python is named after Monty Python, not the snake",
-  "The first 1GB hard drive weighed over 500 pounds and cost $40,000",
-  "More than 570 new websites are created every minute",
-  "The first computer mouse was made of wood in 1964",
-  "Over 6,000 computer viruses are released every month",
-  "The average person blinks 12 times a minute, but only 7 times while using a computer",
-  "The first webcam was created to monitor a coffee pot at Cambridge University",
-  "Bill Gates' house was designed using a Mac computer",
-  "The original name of Windows was Interface Manager",
-  "90% of the world's currency exists only on computers",
-  "The first electronic computer weighed more than 27 tons",
-  "There are over 700 programming languages in existence",
-  "The QWERTY keyboard layout was designed to slow down typing speed",
-  "Email existed before the World Wide Web was created"
-];
-
-// Loading Screen
+// Loading Screen Progress Bar
 window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loadingScreen');
-  const loadingFact = document.getElementById('loadingFact');
-  
-  // Display random tech fact
-  if (loadingFact) {
-    const randomFact = techFacts[Math.floor(Math.random() * techFacts.length)];
-    loadingFact.textContent = randomFact;
-  }
-  
-  // Minimum display time of 1.5 seconds for smooth experience
-  setTimeout(() => {
+  const loadingBar = document.getElementById('loadingBar');
+
+  if (loadingBar) {
+    let width = 0;
+    const interval = setInterval(() => {
+      if (width >= 100) {
+        clearInterval(interval);
+
+        // Use a small timeout to ensure the bar looks full before fading
+        setTimeout(() => {
+          loadingScreen.classList.add('hidden');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }, 200);
+
+      } else {
+        width += Math.random() * 10; // Random increment
+        if (width > 100) width = 100;
+        loadingBar.style.width = width + '%';
+      }
+    }, 100); // Update every 100ms
+  } else {
+    // Fallback if elements missing
     loadingScreen.classList.add('hidden');
-    
-    // Remove from DOM after transition
-    setTimeout(() => {
-      loadingScreen.style.display = 'none';
-    }, 500);
-  }, 1500);
+  }
 });
 
 // Smooth page load (no flash)

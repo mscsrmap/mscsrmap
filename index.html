@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,8 +18,9 @@
   <link rel="dns-prefetch" href="https://api.web3forms.com" />
 
   <!-- Stylesheets with optimized loading -->
-  <link rel="stylesheet" href="styles.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -28,36 +29,29 @@
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
     <div class="loading-content">
-      <img src="images/MSC%20Logo.png" alt="MSC Logo" class="loading-logo">
-      <div class="loading-dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loadingBar"></div>
       </div>
-      <p class="loading-fact" id="loadingFact"></p>
     </div>
   </div>
 
   <!-- Background Video - optimized with preload metadata -->
   <video class="background-video" muted loop playsinline id="bgVideo" preload="metadata">
-    <source src="images/Microsoft_Student_Community_Title_Card.mp4" type="video/mp4">
+    <source
+      src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/Microsoft_Student_Community_Title_Card.mp4"
+      type="video/mp4">
   </video>
   <div class="background-overlay"></div>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="nav-logo">
-        <a href="index.html">
-          <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="nav-logo-img" />
-        </a>
-      </div>
+
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="events.html" class="nav-link">Events</a></li>
         <li><a href="team.html" class="nav-link">Team</a></li>
-        <li><a href="https://singularitymainwebsite.netlify.app/" target="_blank" rel="noopener noreferrer"
-            class="singularity-btn" title="The Singularity Lab - Advanced Research Lab">Singularity</a></li>
+
       </ul>
       <div class="hamburger">
         <span></span>
@@ -75,22 +69,38 @@
     <a href="#contact" class="checkpoint-dot" data-section="contact" title="Contact"></a>
   </div>
 
-  <!-- Scroll Down Indicator -->
-  <a href="#contact" class="scroll-indicator">
-    <span class="scroll-text">Scroll Down to Contact</span>
-    <i class="fas fa-arrow-down scroll-arrow"></i>
-  </a>
+
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="hero-title-line">Microsoft</span>
-        <span class="hero-title-line">Student Community</span>
-      </h1>
-      <p class="hero-subtitle">SRM UNIVERSITY AP</p>
-      <div class="hero-logo">
-        <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="hero-logo-img" />
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-subtitle">SRM UNIVERSITY AP</p>
+        <h1 class="hero-title">Microsoft Student Community</h1>
+        <div class="hero-separator"></div>
+        <p class="hero-tagline">Empowering students through technology & innovation</p>
+        <p class="hero-description">The Microsoft Student Community is a dynamic student-led organization dedicated to
+          fostering innovation, technical skills, and collaborative learning. Join us to explore, build, and lead
+          through hands-on workshops, hackathons, and expert sessions.</p>
+      </div>
+      <div class="hero-slideshow">
+        <div class="hero-slider">
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc1.jpg"
+            alt="MSC Event 1" loading="eager" />
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc2.jpg"
+            alt="MSC Event 2" loading="eager" />
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc3.jpg"
+            alt="MSC Event 3" loading="eager" />
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc4.jpg"
+            alt="MSC Event 4" loading="eager" />
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc5.jpg"
+            alt="MSC Event 5" loading="eager" />
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc6.jpg"
+            alt="MSC Event 6" loading="eager" />
+          <!-- Clone of first image for seamless loop -->
+          <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/hackmsc1.jpg"
+            alt="MSC Event 1" loading="eager" />
+        </div>
       </div>
     </div>
   </section>
@@ -136,7 +146,8 @@
         </div>
         <div class="about-image">
           <div class="image-placeholder">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" loading="lazy" decoding="async" />
+            <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/MSC%20Logo.png"
+              alt="Microsoft Student Community Logo" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -151,8 +162,8 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/Jayanth_RK.jpg" alt="Jayanth Ramakrishnan" class="founder-img" loading="lazy"
-                decoding="async" />
+              <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/Jayanth_RK.jpg"
+                alt="Jayanth Ramakrishnan" class="founder-img" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -169,7 +180,8 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/CV_Tomy.jpg" alt="CV Tomy" class="founder-img" loading="lazy" decoding="async" />
+              <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/CV_Tomy.jpg"
+                alt="CV Tomy" class="founder-img" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -186,8 +198,8 @@
         <div class="founder-card">
           <div class="founder-image">
             <div class="image-placeholder">
-              <img src="images/Dr_Murali_Krishna.jpg" alt="Dr Murali Krishna Enduri" class="founder-img" loading="lazy"
-                decoding="async" />
+              <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/Dr_Murali_Krishna.jpg"
+                alt="Dr Murali Krishna Enduri" class="founder-img" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="founder-info">
@@ -242,7 +254,7 @@
   <div class="event-modal" id="eventModal">
     <div class="event-modal-content">
       <div class="event-modal-header">
-        <div class="event-modal-close" id="closeModal">×</div>
+        <div class="event-modal-close" id="closeModal">Ã—</div>
         <h3 class="event-modal-title" id="modalTitle"></h3>
         <div class="event-modal-date" id="modalDate"></div>
       </div>
@@ -259,8 +271,8 @@
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="images/MSC%20Logo.png" alt="Microsoft Student Community Logo" class="footer-logo-img"
-              loading="lazy" decoding="async" />
+            <img src="https://lkbwunzswqbnoygxtilm.supabase.co/storage/v1/object/public/webpage/MSC%20Logo.png"
+              alt="Microsoft Student Community Logo" class="footer-logo-img" loading="lazy" decoding="async" />
           </div>
           <div class="footer-connect">
             <p>Connect with us</p>
@@ -281,7 +293,7 @@
     </div>
   </footer>
 
-  <script src="script.min.js" defer></script>
+  <script src="script.js" defer></script>
 
   <script type="module">
     // Import the functions you need from the SDKs you need
